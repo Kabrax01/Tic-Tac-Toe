@@ -107,7 +107,7 @@ function ticTacToe() {
       function endGameSettings(state, symbol) {
         let winner = symbol;
         display.textContent = `${
-          state == player ? `${winner} WINS!` : "Its a tie"
+          state == player ? `${winner} WINS!` : "It`s a draw"
         }`;
         winnerArr = [];
         game = false;
