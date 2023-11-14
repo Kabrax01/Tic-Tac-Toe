@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto Mono", monospace;
+}
+
+.game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.initial {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.welcome__text {
+  font-size: 4rem;
+  color: aqua;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.start__btn {
+  font-family: inherit;
+  margin-top: 2rem;
+  font-size: 3rem;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: aqua;
+}
+
+.start__btn:active {
+  transform: translateY(4px);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.square {
+  background-color: aqua;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7rem;
+}
+
+.display {
+  text-align: center;
+  height: 4rem;
+  font-size: 3rem;
+}
+
+.playing {
+  font-size: 3.6rem;
+}
+
+.reset {
+  width: 10rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border-color: transparent;
+  color: aqua;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background-color: black;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.reset:active {
+  transform: translateY(2px);
+}
