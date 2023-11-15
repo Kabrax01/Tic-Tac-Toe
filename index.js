@@ -19,7 +19,7 @@ let game = true;
 startBtn.addEventListener("click", (e) => {
   const markup = `
   <div class="game">
-        <span class="display">Playing: <span class="playing">X</span></span>
+        <span class="display">Playing: O</span>
         <div class="board">
           <div class="square" data-value="1"></div>
           <div class="square" data-value="2"></div>
@@ -49,10 +49,9 @@ startBtn.addEventListener("click", (e) => {
 function ticTacToe() {
   const squares = document.querySelectorAll(".square");
   const reset = document.querySelector(".reset");
-  const playing = document.querySelector(".playing");
   const display = document.querySelector(".display");
   let player = Math.floor(Math.random() * 2);
-  playing.textContent = `${player === 1 ? "X" : "O"}`;
+  display.textContent = `Playing: ${player === 1 ? "X" : "O"}`;
 
   squares.forEach((sq) => sq.addEventListener("click", handleGame));
   reset.addEventListener("click", resetGame);
@@ -67,16 +66,18 @@ function ticTacToe() {
 
     if (player === 1) {
       e.target.textContent = "X";
-      playing.textContent = "O";
+      display.textContent = "Playing: O";
     } else {
       e.target.textContent = "O";
-      playing.textContent = "X";
+      display.textContent = "Playing: X";
     }
 
     const squareValue = e.target.textContent;
+
     boardScore[squareNum] = squareValue;
     e.target.removeEventListener("click", handleGame);
 
+    console.log(boardScore);
     checkWinner(squareValue);
   }
 
@@ -84,9 +85,13 @@ function ticTacToe() {
     for (let i = 0; i < winningConditions.length; i++) {
       const arr = winningConditions[i];
       let winnerArr = [[], [], []];
+      let checkingCounter = 0;
+
+      if (!game) break;
 
       for (let j = 0; j < arr.length; j++) {
         if (boardScore[arr[j]] === squareValue) winnerArr[j] = squareValue;
+        checkingCounter += 1;
       }
 
       if (
@@ -101,15 +106,15 @@ function ticTacToe() {
         winnerArr[2] === "O"
       ) {
         endGameSettings(player, "O");
-      } else if (occupied === 9) {
+      } else if (occupied === 9 && checkingCounter === 3) {
         endGameSettings("");
       }
-      function endGameSettings(state, symbol) {
+
+      function endGameSettings(state = null, symbol = "") {
         let winner = symbol;
         display.textContent = `${
-          state == player ? `${winner} WINS!` : "It`s a draw"
+          state === player ? `${winner} WINS!` : "It`s a draw"
         }`;
-        winnerArr = [];
         game = false;
         reset.style.opacity = 1;
       }
@@ -121,13 +126,11 @@ function ticTacToe() {
   function resetGame() {
     squares.forEach((sq) => (sq.textContent = ""));
     boardScore = [[], [], [], [], [], [], [], [], [], []];
-    display.innerHTML = `Playing: <span class="playing">${
-      player === 1 ? "X" : "O"
-    }</span>`;
-    playing.textContent = `${player === 1 ? "X" : "O"}`;
+    player = Math.floor(Math.random() * 2);
+    display.textContent = `Playing: ${player === 1 ? "X" : "O"}`;
     occupied = 0;
     reset.style.opacity = 0;
     game = true;
-    ticTacToe();
+    squares.forEach((sq) => sq.addEventListener("click", handleGame));
   }
 }
