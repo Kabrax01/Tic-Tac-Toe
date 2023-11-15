@@ -82,16 +82,17 @@ function ticTacToe() {
   }
 
   function checkWinner(squareValue) {
+    let checkingCounter = 0;
+
     for (let i = 0; i < winningConditions.length; i++) {
       const arr = winningConditions[i];
       let winnerArr = [[], [], []];
-      let checkingCounter = 0;
+      checkingCounter += 1;
 
       if (!game) break;
 
       for (let j = 0; j < arr.length; j++) {
         if (boardScore[arr[j]] === squareValue) winnerArr[j] = squareValue;
-        checkingCounter += 1;
       }
 
       if (
@@ -106,7 +107,10 @@ function ticTacToe() {
         winnerArr[2] === "O"
       ) {
         endGameSettings(player, "O");
-      } else if (occupied === 9 && checkingCounter === 3) {
+      } else if (
+        occupied === 9 &&
+        checkingCounter === winningConditions.length
+      ) {
         endGameSettings("");
       }
 
