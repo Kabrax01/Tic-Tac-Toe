@@ -5,7 +5,7 @@
 ## Screenshot
 
 ![](/img/ss_TTT_2.png)
-![](/img/ss_TTT_3.png)
+![](/img/ss_TT_3.png)
 
 ## Built with
 
