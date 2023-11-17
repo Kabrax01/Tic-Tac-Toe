@@ -4,8 +4,8 @@
 
 ## Screenshot
 
-![](/img/ss_TTT_2.png)
-![](/img/ss_TT_3.png)
+![](/img/ss_TTT_2.png | height=80)
+![](/img/ss_TT_3.png | height=100)
 
 ## Built with
 
