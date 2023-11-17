@@ -2,10 +2,10 @@
 
 - Live Site URL: [https://kabrax01.github.io/Tic-Tac-Toe/](https://kabrax01.github.io/Tic-Tac-Toe/)
 
-## Screenshot
+## Screenshots
 
-<img src="/img/ss_TTT_2.png" width="300">
 <img src="/img/ss_TT_3.png" width="300">
+<img src="/img/ss_TTT_2.png" width="300">
 
 
 ## Built with
