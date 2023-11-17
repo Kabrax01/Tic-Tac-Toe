@@ -4,9 +4,8 @@
 
 ## Screenshot
 
-![](/images/start.png)
-![](/images/finish.png)
-![](/images/active.png)
+![](/img/ss_TTT_2.png)
+![](/img/ss_TTT_3.png)
 
 ## Built with
 
