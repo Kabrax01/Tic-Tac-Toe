@@ -4,9 +4,9 @@
 
 ## Screenshot
 
-<img src="/img/ss_TTT_2.png" width="200">
-![](./img/ss_TTT_2.png =x80)
-![](./img/ss_TT_3.png =x100)
+<img src="/img/ss_TTT_2.png" width="300">
+<img src="/img/ss_TT_3.png" width="300">
+
 
 ## Built with
 
