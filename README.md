@@ -15,7 +15,6 @@
 - Flexbox
 - GRID
 - JavaScript
-- mobile first approach
 
 ## Author
 
